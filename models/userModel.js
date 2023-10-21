@@ -1,7 +1,9 @@
-const fs = require('fs').promises; 
+// Import necessary modules
+const fs = require('fs').promises;
 const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 
+// Function to read users from the JSON file
 const readUsersFromFile = async () => {
     try {
         const data = await fs.readFile(usersFilePath, 'utf-8');
@@ -13,6 +15,7 @@ const readUsersFromFile = async () => {
     }
 };
 
+// Function to get all users
 exports.getAllUsers = async () => {
     try {
         const users = await readUsersFromFile();
@@ -23,12 +26,13 @@ exports.getAllUsers = async () => {
     }
 }
 
+// Function to add a new user
 exports.addUser = async (name) => {
     try {
         const users = await readUsersFromFile();
         const newUser = { id: users.length + 1, name };
         users.push(newUser);
-        await fs.writeFile(usersFilePath, JSON.stringify(users, null, 2)); 
+        await fs.writeFile(usersFilePath, JSON.stringify(users, null, 2));
         return newUser;
     } catch (error) {
         console.log(error);

@@ -1,9 +1,14 @@
+// Import the user model
 const userModel = require("../models/userModel");
 
-exports.health = (req, res)=>{
+// Controller functions for handling HTTP requests
+
+// A simple health check function
+exports.health = (req, res) => {
     res.send("<h1>App is running and is healthy</h1>");
 }
 
+// Get all users function
 exports.getUsers = async (req, res) => {
     try {
         const users = await userModel.getAllUsers();
@@ -13,6 +18,7 @@ exports.getUsers = async (req, res) => {
     }
 }
 
+// Add a user function
 exports.addUser = async (req, res) => {
     console.log(req.body);
     try {
