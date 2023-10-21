@@ -1,10 +1,7 @@
-const express = require("express");
+const app = require("express")();
 const userController = require("../controllers/userController");
-
-const app = express();
-
-// Define routes
 app.get("/health", userController.health);
 app.get("/", userController.getUsers);
+app.post("/addUser", userController.addUser);
 
 module.exports = app;

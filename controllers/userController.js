@@ -12,3 +12,15 @@ exports.getUsers = async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 }
+
+exports.addUser = async (req, res) => {
+    console.log(req.body);
+    try {
+        const { name } = req.body;
+        const newUser = userModel.addUser(name);
+        res.status(201).json(newUser);
+    } catch (error) {
+        console.error('Error in addUser:', error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+}

@@ -1,10 +1,14 @@
 [
-    {
-        "id": 1,
-        "name": "Sushant Kumar Bishoi"
-    },
-    {
-        "id": 2,
-        "name": "Aditi Bisoi"
-    }
+  {
+    "id": 1,
+    "name": "Sushant Kumar Bishoi"
+  },
+  {
+    "id": 2,
+    "name": "Aditi Bisoi"
+  },
+  {
+    "id": 3,
+    "name": "Rahul Bishoi"
+  }
 ]
